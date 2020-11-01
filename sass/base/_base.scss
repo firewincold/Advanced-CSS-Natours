@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html {
+    //this defines what 1rem is 
+    //fontsize定义了1rem的大小。我们页面所有元素都是以rem为单位。所以改变font-size所有元素的大小都会相应发生变化
+    font-size: 62.5%; //1rem = 10px
+
+    //@include respond(phone) {
+    //    font-size: 50%;
+    //}
+
+    @include respond(tab-land) {
+        font-size: 56.25%;  
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1 rem = 8 px = 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+
+
+};
+
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
